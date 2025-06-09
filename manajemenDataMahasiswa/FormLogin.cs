@@ -18,9 +18,25 @@ namespace manajemenDataMahasiswa
             InitializeComponent();
         }
 
+        private bool IsValidEmail(string email)
+        {
+            if (string.IsNullOrWhiteSpace(email))
+                return false;
+
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string email = txtEmail.Text.Trim();
+            string email = txtEmail.Text.Trim().ToLower();
             string password = txtPassword.Text.Trim();
 
             if(string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
@@ -29,12 +45,18 @@ namespace manajemenDataMahasiswa
                 return;
             }
 
+            if (!IsValidEmail(email))
+            {
+                MessageBox.Show("Format email yang Anda masukkan tidak valid.", "Validasi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             using (MySqlConnection conn = new MySqlConnection(DBConfig.ConnStr))
             {
                 try
                 {
                     conn.Open();
-                    string query = "SELECT password FROM users WHERE email = @email";
+                    string query = "SELECT password, role FROM users WHERE email = @email";
                     MySqlCommand cmd = new MySqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("@email", email);
 
@@ -43,14 +65,29 @@ namespace manajemenDataMahasiswa
                     if (reader.Read())
                     {
                         string hashFromDb = reader.GetString("password");
+                        string userRole = reader.GetString("role");
+
                         bool isValid = BCrypt.Net.BCrypt.Verify(password, hashFromDb);
 
                         if (isValid)
                         {
                             MessageBox.Show("Login berhasil!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            FormDashboardAdmin frmadmin = new FormDashboardAdmin();
-                            this.Hide();
-                            frmadmin.Show();
+                            if(userRole == "mahasiswa")
+                            {
+                                FormDashboardMahasiswa frmmhs = new FormDashboardMahasiswa();
+                                this.Hide();
+                                frmmhs.Show();
+                            }
+                            else if(userRole == "dosen")
+                            {
+                                FormDashboardAdmin frmadmin = new FormDashboardAdmin();
+                                this.Hide();
+                                frmadmin.Show();
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Email atau password yang Anda masukkan salah.", "Login Gagal", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     else
