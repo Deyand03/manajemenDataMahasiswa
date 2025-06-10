@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,6 +30,11 @@ namespace manajemenDataMahasiswa
             pnlNav.Top = btnDashboard.Top;
             pnlNav.Left = btnDashboard.Left;
             btnDashboard.BackColor = Color.FromArgb(46, 51, 73);
+
+            using(MySqlConnection conn = new MySqlConnection(DBConfig.ConnStr))
+            {
+                conn.Open();
+            }
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)
