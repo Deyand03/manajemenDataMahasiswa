@@ -40,14 +40,11 @@
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.labelNama = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label0 = new System.Windows.Forms.Label();
+            this.panelContent = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
-            this.guna2Panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Panel1
@@ -60,6 +57,7 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(395, 747);
             this.guna2Panel1.TabIndex = 0;
+            this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
             // 
             // guna2Panel3
             // 
@@ -73,6 +71,7 @@
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.Size = new System.Drawing.Size(395, 463);
             this.guna2Panel3.TabIndex = 3;
+            this.guna2Panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel3_Paint);
             // 
             // pnlNav
             // 
@@ -81,6 +80,7 @@
             this.pnlNav.Name = "pnlNav";
             this.pnlNav.Size = new System.Drawing.Size(10, 132);
             this.pnlNav.TabIndex = 4;
+            this.pnlNav.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlNav_Paint);
             // 
             // btnRegis
             // 
@@ -179,6 +179,7 @@
             this.btnLogout.TabIndex = 7;
             this.btnLogout.Text = "Logout";
             this.btnLogout.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // guna2Panel2
             // 
@@ -190,6 +191,7 @@
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(395, 284);
             this.guna2Panel2.TabIndex = 2;
+            this.guna2Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel2_Paint);
             // 
             // guna2PictureBox1
             // 
@@ -204,6 +206,7 @@
             this.guna2PictureBox1.TabIndex = 2;
             this.guna2PictureBox1.TabStop = false;
             this.guna2PictureBox1.UseTransparentBackground = true;
+            this.guna2PictureBox1.Click += new System.EventHandler(this.guna2PictureBox1_Click);
             // 
             // label2
             // 
@@ -227,38 +230,14 @@
             this.labelNama.Text = "Nama";
             this.labelNama.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label1
+            // panelContent
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(424, 29);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(403, 32);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Manajemen Data Mahasiswa";
-            // 
-            // guna2Panel4
-            // 
-            this.guna2Panel4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.guna2Panel4.BorderRadius = 8;
-            this.guna2Panel4.BorderThickness = 1;
-            this.guna2Panel4.Controls.Add(this.label0);
-            this.guna2Panel4.Location = new System.Drawing.Point(431, 102);
-            this.guna2Panel4.Name = "guna2Panel4";
-            this.guna2Panel4.Size = new System.Drawing.Size(337, 138);
-            this.guna2Panel4.TabIndex = 2;
-            // 
-            // label0
-            // 
-            this.label0.AutoSize = true;
-            this.label0.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label0.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label0.Location = new System.Drawing.Point(18, 20);
-            this.label0.Name = "label0";
-            this.label0.Size = new System.Drawing.Size(196, 25);
-            this.label0.TabIndex = 0;
-            this.label0.Text = "Jumlah Mahasiswa";
+            this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContent.Location = new System.Drawing.Point(395, 0);
+            this.panelContent.Name = "panelContent";
+            this.panelContent.Size = new System.Drawing.Size(1013, 747);
+            this.panelContent.TabIndex = 5;
+            this.panelContent.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContent_Paint);
             // 
             // FormDashboardAdmin
             // 
@@ -266,8 +245,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(1408, 747);
-            this.Controls.Add(this.guna2Panel4);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.panelContent);
             this.Controls.Add(this.guna2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "FormDashboardAdmin";
@@ -278,17 +256,13 @@
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
-            this.guna2Panel4.ResumeLayout(false);
-            this.guna2Panel4.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelNama;
@@ -299,7 +273,6 @@
         private Guna.UI2.WinForms.Guna2Panel pnlNav;
         private Guna.UI2.WinForms.Guna2Button btnRegis;
         private Guna.UI2.WinForms.Guna2Button btnDashboard;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
-        private System.Windows.Forms.Label label0;
+        private Guna.UI2.WinForms.Guna2Panel panelContent;
     }
 }

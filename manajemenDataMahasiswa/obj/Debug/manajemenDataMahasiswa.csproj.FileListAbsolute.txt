@@ -23,3 +23,4 @@ C:\Users\Lenovo\source\repos\ManajemenDataMahasiswa\manajemenDataMahasiswa\obj\D
 C:\Users\Lenovo\source\repos\ManajemenDataMahasiswa\manajemenDataMahasiswa\obj\Debug\manajeme.FF3EE513.Up2Date
 C:\Users\Lenovo\source\repos\ManajemenDataMahasiswa\manajemenDataMahasiswa\obj\Debug\manajemenDataMahasiswa.exe
 C:\Users\Lenovo\source\repos\ManajemenDataMahasiswa\manajemenDataMahasiswa\obj\Debug\manajemenDataMahasiswa.pdb
+C:\Users\Lenovo\source\repos\ManajemenDataMahasiswa\manajemenDataMahasiswa\obj\Debug\manajemenDataMahasiswa.ucDashboard.resources

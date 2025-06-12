@@ -72,6 +72,7 @@ namespace manajemenDataMahasiswa
                         if (isValid)
                         {
                             MessageBox.Show("Login berhasil!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                             if(userRole == "mahasiswa")
                             {
                                 FormDashboardMahasiswa frmmhs = new FormDashboardMahasiswa();
