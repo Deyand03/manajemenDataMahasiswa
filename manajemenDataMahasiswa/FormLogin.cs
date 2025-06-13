@@ -56,7 +56,7 @@ namespace manajemenDataMahasiswa
                 try
                 {
                     conn.Open();
-                    string query = "SELECT password, role FROM users WHERE email = @email";
+                    string query = "SELECT id, password, role FROM users WHERE email = @email";
                     MySqlCommand cmd = new MySqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("@email", email);
 
@@ -66,21 +66,40 @@ namespace manajemenDataMahasiswa
                     {
                         string hashFromDb = reader.GetString("password");
                         string userRole = reader.GetString("role");
-
+                        string id = reader.GetString("id");
                         bool isValid = BCrypt.Net.BCrypt.Verify(password, hashFromDb);
 
+                        reader.Close();
                         if (isValid)
                         {
                             MessageBox.Show("Login berhasil!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                            if(userRole == "mahasiswa")
+                            
+                            if (userRole == "mahasiswa")
                             {
+                                string queryMhs = "SELECT nama, nim FROM mahasiswa WHERE user_id = @id";
+                                MySqlCommand cmdMhs = new MySqlCommand(queryMhs, conn);
+                                cmdMhs.Parameters.AddWithValue("@id", id);
+                                MySqlDataReader readerMhs = cmdMhs.ExecuteReader();
+                                readerMhs.Read();
+                                string nama = readerMhs.GetString("nama");
+                                string nim = readerMhs.GetString("nim");
+
+                                UserSession.StartSession(nama, email, null, nim);
                                 FormDashboardMahasiswa frmmhs = new FormDashboardMahasiswa();
                                 this.Hide();
                                 frmmhs.Show();
                             }
                             else if(userRole == "dosen")
                             {
+                                string queryDos = "SELECT nama, nip FROM dosen WHERE user_id = @id";
+                                MySqlCommand cmdDos = new MySqlCommand(queryDos, conn);
+                                cmdDos.Parameters.AddWithValue("@id", id);
+                                MySqlDataReader readerDos = cmdDos.ExecuteReader();
+                                readerDos.Read();
+                                string nama = readerDos.GetString("nama");
+                                string nip = readerDos.GetString("nip");
+
+                                UserSession.StartSession(nama, email, nip, null);
                                 FormDashboardAdmin frmadmin = new FormDashboardAdmin();
                                 this.Hide();
                                 frmadmin.Show();
@@ -101,6 +120,25 @@ namespace manajemenDataMahasiswa
                     MessageBox.Show("Terjadi Kesalahan koneksi:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void btnShowHide_Click(object sender, EventArgs e)
+        {
+            if(txtPassword.UseSystemPasswordChar == false)
+            {
+                txtPassword.UseSystemPasswordChar = true;
+                btnShowHide.Image = Properties.Resources.eye_hide;
+            }
+            else
+            {
+                txtPassword.UseSystemPasswordChar = false;
+                btnShowHide.Image= Properties.Resources.eye_show;
+            }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

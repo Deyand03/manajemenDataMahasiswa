@@ -32,15 +32,15 @@
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.pnlNav = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.labelNama = new System.Windows.Forms.Label();
+            this.panelContent = new Guna.UI2.WinForms.Guna2Panel();
             this.btnRegis = new Guna.UI2.WinForms.Guna2Button();
             this.btnData = new Guna.UI2.WinForms.Guna2Button();
             this.btnDashboard = new Guna.UI2.WinForms.Guna2Button();
             this.btnLogout = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.labelNama = new System.Windows.Forms.Label();
-            this.panelContent = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
@@ -55,32 +55,74 @@
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(395, 747);
+            this.guna2Panel1.Size = new System.Drawing.Size(395, 746);
             this.guna2Panel1.TabIndex = 0;
-            this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
             // 
             // guna2Panel3
             // 
+            this.guna2Panel3.BackColor = System.Drawing.Color.White;
             this.guna2Panel3.Controls.Add(this.pnlNav);
             this.guna2Panel3.Controls.Add(this.btnRegis);
             this.guna2Panel3.Controls.Add(this.btnData);
             this.guna2Panel3.Controls.Add(this.btnDashboard);
             this.guna2Panel3.Controls.Add(this.btnLogout);
             this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2Panel3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.guna2Panel3.Location = new System.Drawing.Point(0, 284);
             this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(395, 463);
+            this.guna2Panel3.Size = new System.Drawing.Size(395, 462);
             this.guna2Panel3.TabIndex = 3;
-            this.guna2Panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel3_Paint);
             // 
             // pnlNav
             // 
-            this.pnlNav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(30)))), ((int)(((byte)(85)))));
+            this.pnlNav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(107)))), ((int)(((byte)(208)))));
             this.pnlNav.Location = new System.Drawing.Point(-10, 250);
             this.pnlNav.Name = "pnlNav";
             this.pnlNav.Size = new System.Drawing.Size(10, 132);
             this.pnlNav.TabIndex = 4;
-            this.pnlNav.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlNav_Paint);
+            // 
+            // guna2Panel2
+            // 
+            this.guna2Panel2.BackColor = System.Drawing.Color.White;
+            this.guna2Panel2.Controls.Add(this.guna2PictureBox1);
+            this.guna2Panel2.Controls.Add(this.label2);
+            this.guna2Panel2.Controls.Add(this.labelNama);
+            this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel2.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.Size = new System.Drawing.Size(395, 284);
+            this.guna2Panel2.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Poppins SemiBold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(106, 207);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(178, 33);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Selamat Datang";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelNama
+            // 
+            this.labelNama.Font = new System.Drawing.Font("Poppins", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNama.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(107)))), ((int)(((byte)(208)))));
+            this.labelNama.Location = new System.Drawing.Point(106, 161);
+            this.labelNama.Name = "labelNama";
+            this.labelNama.Size = new System.Drawing.Size(178, 46);
+            this.labelNama.TabIndex = 3;
+            this.labelNama.Text = "Nama";
+            this.labelNama.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panelContent
+            // 
+            this.panelContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContent.Location = new System.Drawing.Point(395, 0);
+            this.panelContent.Name = "panelContent";
+            this.panelContent.Size = new System.Drawing.Size(1101, 746);
+            this.panelContent.TabIndex = 5;
             // 
             // btnRegis
             // 
@@ -91,9 +133,9 @@
             this.btnRegis.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnRegis.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnRegis.FillColor = System.Drawing.Color.Transparent;
-            this.btnRegis.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegis.ForeColor = System.Drawing.Color.White;
-            this.btnRegis.Image = ((System.Drawing.Image)(resources.GetObject("btnRegis.Image")));
+            this.btnRegis.Font = new System.Drawing.Font("Poppins SemiBold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegis.ForeColor = System.Drawing.Color.Black;
+            this.btnRegis.Image = global::manajemenDataMahasiswa.Properties.Resources.regis_icon;
             this.btnRegis.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnRegis.ImageOffset = new System.Drawing.Point(15, 0);
             this.btnRegis.IndicateFocus = true;
@@ -116,15 +158,16 @@
             this.btnData.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnData.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnData.FillColor = System.Drawing.Color.Transparent;
-            this.btnData.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnData.ForeColor = System.Drawing.Color.White;
-            this.btnData.Image = ((System.Drawing.Image)(resources.GetObject("btnData.Image")));
+            this.btnData.Font = new System.Drawing.Font("Poppins SemiBold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnData.ForeColor = System.Drawing.Color.Black;
+            this.btnData.Image = global::manajemenDataMahasiswa.Properties.Resources.data;
             this.btnData.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnData.ImageOffset = new System.Drawing.Point(15, 0);
+            this.btnData.ImageSize = new System.Drawing.Size(25, 25);
             this.btnData.IndicateFocus = true;
             this.btnData.Location = new System.Drawing.Point(0, 55);
             this.btnData.Name = "btnData";
-            this.btnData.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
+            this.btnData.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
             this.btnData.Size = new System.Drawing.Size(395, 55);
             this.btnData.TabIndex = 5;
             this.btnData.Text = "Data Mahasiswa";
@@ -141,8 +184,8 @@
             this.btnDashboard.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnDashboard.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnDashboard.FillColor = System.Drawing.Color.Transparent;
-            this.btnDashboard.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDashboard.ForeColor = System.Drawing.Color.White;
+            this.btnDashboard.Font = new System.Drawing.Font("Poppins SemiBold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDashboard.ForeColor = System.Drawing.Color.Black;
             this.btnDashboard.Image = ((System.Drawing.Image)(resources.GetObject("btnDashboard.Image")));
             this.btnDashboard.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnDashboard.ImageOffset = new System.Drawing.Point(15, 0);
@@ -154,6 +197,7 @@
             this.btnDashboard.TabIndex = 9;
             this.btnDashboard.Text = "Dashboard";
             this.btnDashboard.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnDashboard.TextOffset = new System.Drawing.Point(0, 3);
             this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             this.btnDashboard.Leave += new System.EventHandler(this.btnDashboard_Leave);
             // 
@@ -166,13 +210,13 @@
             this.btnLogout.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnLogout.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnLogout.FillColor = System.Drawing.Color.Transparent;
-            this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogout.ForeColor = System.Drawing.Color.White;
-            this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
+            this.btnLogout.Font = new System.Drawing.Font("Poppins SemiBold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.ForeColor = System.Drawing.Color.Black;
+            this.btnLogout.Image = global::manajemenDataMahasiswa.Properties.Resources.logout_icon;
             this.btnLogout.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnLogout.ImageOffset = new System.Drawing.Point(15, 0);
             this.btnLogout.IndicateFocus = true;
-            this.btnLogout.Location = new System.Drawing.Point(0, 408);
+            this.btnLogout.Location = new System.Drawing.Point(0, 407);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
             this.btnLogout.Size = new System.Drawing.Size(395, 55);
@@ -180,18 +224,6 @@
             this.btnLogout.Text = "Logout";
             this.btnLogout.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
-            // 
-            // guna2Panel2
-            // 
-            this.guna2Panel2.Controls.Add(this.guna2PictureBox1);
-            this.guna2Panel2.Controls.Add(this.label2);
-            this.guna2Panel2.Controls.Add(this.labelNama);
-            this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel2.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(395, 284);
-            this.guna2Panel2.TabIndex = 2;
-            this.guna2Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel2_Paint);
             // 
             // guna2PictureBox1
             // 
@@ -206,45 +238,13 @@
             this.guna2PictureBox1.TabIndex = 2;
             this.guna2PictureBox1.TabStop = false;
             this.guna2PictureBox1.UseTransparentBackground = true;
-            this.guna2PictureBox1.Click += new System.EventHandler(this.guna2PictureBox1_Click);
-            // 
-            // label2
-            // 
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label2.Location = new System.Drawing.Point(106, 207);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(178, 33);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Selamat Datang";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelNama
-            // 
-            this.labelNama.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNama.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(30)))), ((int)(((byte)(85)))));
-            this.labelNama.Location = new System.Drawing.Point(106, 150);
-            this.labelNama.Name = "labelNama";
-            this.labelNama.Size = new System.Drawing.Size(178, 46);
-            this.labelNama.TabIndex = 3;
-            this.labelNama.Text = "Nama";
-            this.labelNama.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panelContent
-            // 
-            this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContent.Location = new System.Drawing.Point(395, 0);
-            this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(1013, 747);
-            this.panelContent.TabIndex = 5;
-            this.panelContent.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContent_Paint);
             // 
             // FormDashboardAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(1408, 747);
+            this.ClientSize = new System.Drawing.Size(1496, 746);
             this.Controls.Add(this.panelContent);
             this.Controls.Add(this.guna2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;

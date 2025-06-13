@@ -10,26 +10,23 @@ namespace manajemenDataMahasiswa
     {
         public static string Nama { get; private set; }
         public static string Email { get; private set; }
-        public static string Role { get; private set; }
         public static string Nip { get; private set; }
-        public static string Jurusan { get; private set; }
+        public static string Nim { get; private set; }
 
-        public static void StartSession(string nama, string email, string role, string nip, string jurusan)
+        public static void StartSession(string nama, string email, string nip, string nim)
         {
             Nama = nama;
             Email = email;
-            Role = role;
             Nip = nip;
-            Jurusan = jurusan;
+            Nim = nim;
         }
 
         public static void EndSession()
         {
             Nama = null;
             Email = null;
-            Role = null;
             Nip = null;
-            Jurusan = null;
+            Nim = null;
         }
     }
 }

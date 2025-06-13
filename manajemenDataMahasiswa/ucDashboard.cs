@@ -39,6 +39,17 @@ namespace manajemenDataMahasiswa
                     DataTable dt = new DataTable();
                     da.Fill(dt);
                     dgvMhs.DataSource = dt;
+                    dgvMhs.Columns["user_id"].HeaderText = "ID";
+                    dgvMhs.Columns["user_id"].Visible = false;
+
+                    dgvMhs.Columns["nim"].HeaderText = "NIM";
+                    dgvMhs.Columns["nama"].HeaderText = "Nama";
+                    dgvMhs.Columns["jurusan"].HeaderText = "Jurusan";
+                    dgvMhs.Columns["fakultas"].HeaderText = "Fakultas";
+                    dgvMhs.Columns["angkatan"].HeaderText = "Angkatan";
+                    dgvMhs.Columns["status"].HeaderText = "Status";
+
+
                 }
                 catch (Exception ex)
                 {
@@ -72,6 +83,16 @@ namespace manajemenDataMahasiswa
                 MessageBox.Show("Gagal mengambil data mahasiswa. \nError: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 labelJmlhMhs.Text = "N/A";
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbFilteredBy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

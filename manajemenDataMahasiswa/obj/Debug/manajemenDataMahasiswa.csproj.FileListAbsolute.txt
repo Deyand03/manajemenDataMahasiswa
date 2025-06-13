@@ -24,3 +24,7 @@ C:\Users\Lenovo\source\repos\ManajemenDataMahasiswa\manajemenDataMahasiswa\obj\D
 C:\Users\Lenovo\source\repos\ManajemenDataMahasiswa\manajemenDataMahasiswa\obj\Debug\manajemenDataMahasiswa.exe
 C:\Users\Lenovo\source\repos\ManajemenDataMahasiswa\manajemenDataMahasiswa\obj\Debug\manajemenDataMahasiswa.pdb
 C:\Users\Lenovo\source\repos\ManajemenDataMahasiswa\manajemenDataMahasiswa\obj\Debug\manajemenDataMahasiswa.ucDashboard.resources
+C:\Users\Lenovo\source\repos\ManajemenDataMahasiswa\manajemenDataMahasiswa\obj\Debug\manajemenDataMahasiswa.ucDataMahasiswa.resources
+C:\Users\Lenovo\source\repos\ManajemenDataMahasiswa\manajemenDataMahasiswa\obj\Debug\manajemenDataMahasiswa.ucRegistrasiMahasiswa.resources
+C:\Users\Lenovo\source\repos\ManajemenDataMahasiswa\manajemenDataMahasiswa\obj\Debug\manajemenDataMahasiswa.Resource.resources
+C:\Users\Lenovo\source\repos\ManajemenDataMahasiswa\manajemenDataMahasiswa\obj\Debug\manajemenDataMahasiswa.FormDashboardMahasiswa.resources
