@@ -43,7 +43,7 @@ namespace manajemenDataMahasiswa
 
                     if (!string.IsNullOrEmpty(nameFilePict) && File.Exists(pathNewPict))
                     {
-                        pictMhs.Image = Image.FromFile(pathNewPict);
+                        LoadImageToPictureBox(pictMhs, pathNewPict);
                     }
                     else
                     {
@@ -100,10 +100,35 @@ namespace manajemenDataMahasiswa
                 {
                     MessageBox.Show("Data Error: " + ex.Message);
                 }
-
-               
-
-
+            }
+        }
+        private void LoadImageToPictureBox(PictureBox pb, string imagePath)
+        {
+            try
+            {
+                // Cek dulu apakah file ada
+                if (File.Exists(imagePath))
+                {
+                    // Baca semua byte dari file ke memory
+                    byte[] imageBytes = File.ReadAllBytes(imagePath);
+                    // Buat MemoryStream dari byte tersebut
+                    using (MemoryStream ms = new MemoryStream(imageBytes))
+                    {
+                        // Set gambar di PictureBox dari MemoryStream
+                        pb.Image = Image.FromStream(ms);
+                    }
+                }
+                else
+                {
+                    // Set gambar default jika file tidak ditemukan
+                    pb.Image = null; // atau Properties.Resources.gambar_default
+                }
+            }
+            catch (Exception ex)
+            {
+                // Tangani jika ada error saat memuat gambar
+                MessageBox.Show("Gagal memuat gambar: " + ex.Message);
+                pb.Image = null; // atau gambar error
             }
         }
         private void ClearForm()

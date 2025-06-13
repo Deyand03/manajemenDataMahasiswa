@@ -95,7 +95,7 @@ namespace manajemenDataMahasiswa
                                     MessageBox.Show($"user_id: {id}, tidak ada");
                                 }
                             }
-                            else if(userRole == "dosen")
+                            else if(userRole == "admin")
                             {
                                 string queryDos = "SELECT nama, nip FROM dosen WHERE user_id = @id";
                                 MySqlCommand cmdDos = new MySqlCommand(queryDos, conn);

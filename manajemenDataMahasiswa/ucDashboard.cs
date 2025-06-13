@@ -38,6 +38,7 @@ namespace manajemenDataMahasiswa
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             LoadData();
+            ClearForm();
         }
         private void TampilkanJumlahMahasiswa()
         {
@@ -222,26 +223,158 @@ namespace manajemenDataMahasiswa
                 object valueSelectedId = dgvMhs.Rows[e.RowIndex].Cells["user_id"].Value;
                 selectedId = (valueSelectedId != null && valueSelectedId != DBNull.Value) ? Convert.ToInt32(valueSelectedId) : -1;
 
-                labelNamaMhs.Text = dgvMhs.Rows[e.RowIndex].Cells["nama"].Value?.ToString() ?? "";
-                string nim = dgvMhs.Rows[e.RowIndex].Cells["nim"].Value?.ToString() ?? "";
-                string jurusan = dgvMhs.Rows[e.RowIndex].Cells["jurusan"].Value?.ToString() ?? "";
-                string status = dgvMhs.Rows[e.RowIndex].Cells["status"].Value?.ToString() ?? "";
+                txtNama.Text = dgvMhs.Rows[e.RowIndex].Cells["nama"].Value?.ToString() ?? "";
+                txtNim.Text = dgvMhs.Rows[e.RowIndex].Cells["nim"].Value?.ToString() ?? "";
+                txtJurusan.Text = dgvMhs.Rows[e.RowIndex].Cells["jurusan"].Value?.ToString() ?? "";
+                txtFakultas.Text = dgvMhs.Rows[e.RowIndex].Cells["fakultas"].Value?.ToString() ?? "";
+                txtAngkatan.Text = dgvMhs.Rows[e.RowIndex].Cells["angkatan"].Value?.ToString() ?? "";
+                cmbStatus.Text = dgvMhs.Rows[e.RowIndex].Cells["status"].Value?.ToString() ?? "";
                 string profilPict = dgvMhs.Rows[e.RowIndex].Cells["foto_profil"].Value?.ToString() ?? "";
                 string folderApp = Application.StartupPath;
                 string path = Path.Combine(folderApp, "foto_mahasiswa", profilPict);
                 if (!string.IsNullOrEmpty(profilPict) && File.Exists(path))
                 {
-                    imageProfil.Image = Image.FromFile(path);
+                    LoadImageToPictureBox(imageProfil, path);
                 }
                 else
                 {
                     imageProfil.Image = Properties.Resources.student;
                 }
-
-                labelNim.Text = $"Nim : {nim}";
-                labelJurusan.Text = $"Jurusan : {jurusan}";
-                labelStatus.Text = $"Status : {status}";
             }
+        }
+        private void LoadImageToPictureBox(PictureBox pb, string imagePath)
+        {
+            try
+            {
+                if (File.Exists(imagePath))
+                {
+                    byte[] imageBytes = File.ReadAllBytes(imagePath);
+                    using (MemoryStream ms = new MemoryStream(imageBytes))
+                    {
+                        pb.Image = Image.FromStream(ms);
+                    }
+                }
+                else
+                {
+                    pb.Image = null; 
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gagal memuat gambar: " + ex.Message);
+                pb.Image = null; 
+            }
+        }
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (selectedId == -1) return;
+            DialogResult result = MessageBox.Show("Yakin ingin menghapus data ? ", "Konfirmasi", MessageBoxButtons.YesNo);
+            if (result != DialogResult.Yes) return;
+
+            using (MySqlConnection conn = new MySqlConnection(DBConfig.ConnStr))
+            {
+                try
+                {
+                    string namaFileFoto = null;
+                    conn.Open();
+                    string querySelect = "SELECT foto_profil FROM mahasiswa WHERE user_id = @user_id";
+                    using(MySqlCommand cmdSelect = new MySqlCommand(querySelect, conn))
+                    {
+                        cmdSelect.Parameters.AddWithValue("@user_id", selectedId);
+                        object resultSelect = cmdSelect.ExecuteScalar();
+                        if(resultSelect != null && resultSelect != DBNull.Value)
+                        {
+                            namaFileFoto = resultSelect.ToString();
+                        }
+                    }
+                    if(imageProfil.Image != null)
+                    {
+                        imageProfil.Image.Dispose();
+                        imageProfil.Image = null;
+                    }
+
+                    if(!string.IsNullOrEmpty(namaFileFoto))
+                    {
+                        string pathPict = Path.Combine(Application.StartupPath, "foto_mahasiswa", namaFileFoto);
+                        if (File.Exists(pathPict))
+                        {
+                            File.Delete(pathPict);
+                        }
+                    }
+                    string queryUpdate = "UPDATE mahasiswa SET foto_profil = NULL WHERE user_id = @user_id";
+                    using (MySqlCommand cmdUpdate = new MySqlCommand(queryUpdate, conn))
+                    {
+                        cmdUpdate.Parameters.AddWithValue("@user_id", selectedId);
+                        cmdUpdate.ExecuteNonQuery();
+                        imageProfil.Image = Properties.Resources.student;
+                    }
+
+                    string queryMhs = "DELETE FROM mahasiswa WHERE user_id = @user_id";
+                    using (MySqlCommand cmdDeleteMhs = new MySqlCommand(queryMhs, conn))
+                    {
+                        cmdDeleteMhs.Parameters.AddWithValue("@user_id", selectedId);
+                        cmdDeleteMhs.ExecuteNonQuery();
+                    }
+                    string queryUsers = "DELETE FROM users WHERE id = @id";
+                    using (MySqlCommand cmdDeleteUsers = new MySqlCommand(queryUsers, conn))
+                    {
+                        cmdDeleteUsers.Parameters.AddWithValue("@id", selectedId);
+                        cmdDeleteUsers.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Data gagal dihapus: " + ex.Message);
+                }
+            }
+        }
+
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if (selectedId == -1) return;
+            using (MySqlConnection conn = new MySqlConnection(DBConfig.ConnStr))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "UPDATE mahasiswa SET nim=@nim, nama=@nama, jurusan=@jurusan, fakultas=@fakultas, angkatan=@angkatan, status=@status WHERE user_id=@user_id";
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@nama", txtNama.Text);
+                    cmd.Parameters.AddWithValue("@nim", txtNim.Text);
+                    cmd.Parameters.AddWithValue("@jurusan", txtJurusan.Text);
+                    cmd.Parameters.AddWithValue("@fakultas", txtFakultas.Text);
+                    cmd.Parameters.AddWithValue("@angkatan", txtAngkatan.Text);
+                    cmd.Parameters.AddWithValue("@status", cmbStatus.Text);
+                    cmd.Parameters.AddWithValue("@user_id", selectedId);
+
+                    cmd.ExecuteNonQuery();
+                    LoadData();
+                    MessageBox.Show("Data Berhasil Diupdate");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("ERROR COGG " + ex.Message);
+                }
+
+            }
+        }
+        private void ClearForm()
+        {
+            txtNama.Clear();
+            txtNim.Clear();
+            txtJurusan.Clear();
+            txtFakultas.Clear();
+            txtAngkatan.Clear();
+            cmbStatus.Text = "";
+
+            selectedId = -1;
+        }
+
+        private void btnCetak_Click(object sender, EventArgs e)
+        {
+            FormrReportMahasiswa frm = new FormrReportMahasiswa();
+            frm.ShowDialog();
         }
     }
 }

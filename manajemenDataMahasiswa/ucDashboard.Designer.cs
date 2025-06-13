@@ -34,6 +34,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dgvMhs = new System.Windows.Forms.DataGridView();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnCetak = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btnUpdate = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btnDelete = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnRefresh = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnNext = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnPrev = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -42,12 +45,20 @@
             this.cmbFilterBy = new System.Windows.Forms.ComboBox();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.imageProfil = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.labelNamaMhs = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.cmbStatus = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtAngkatan = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtFakultas = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtJurusan = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtNama = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtNim = new Guna.UI2.WinForms.Guna2TextBox();
             this.labelStatus = new System.Windows.Forms.Label();
             this.labelJurusan = new System.Windows.Forms.Label();
-            this.labelIPK = new System.Windows.Forms.Label();
             this.labelNim = new System.Windows.Forms.Label();
-            this.imageProfil = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.lblJmlhAktif = new System.Windows.Forms.Label();
@@ -59,8 +70,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvMhs)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
-            this.labelNamaMhs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageProfil)).BeginInit();
+            this.labelNamaMhs.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             this.guna2Panel5.SuspendLayout();
             this.SuspendLayout();
@@ -128,6 +139,9 @@
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.guna2Panel1.Controls.Add(this.btnCetak);
+            this.guna2Panel1.Controls.Add(this.btnUpdate);
+            this.guna2Panel1.Controls.Add(this.btnDelete);
             this.guna2Panel1.Controls.Add(this.btnRefresh);
             this.guna2Panel1.Controls.Add(this.btnNext);
             this.guna2Panel1.Controls.Add(this.btnPrev);
@@ -142,6 +156,69 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(1101, 530);
             this.guna2Panel1.TabIndex = 10;
+            // 
+            // btnCetak
+            // 
+            this.btnCetak.Animated = true;
+            this.btnCetak.BorderRadius = 6;
+            this.btnCetak.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCetak.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCetak.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCetak.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCetak.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCetak.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(107)))), ((int)(((byte)(208)))));
+            this.btnCetak.FillColor2 = System.Drawing.Color.DodgerBlue;
+            this.btnCetak.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCetak.ForeColor = System.Drawing.Color.White;
+            this.btnCetak.Location = new System.Drawing.Point(217, 465);
+            this.btnCetak.Name = "btnCetak";
+            this.btnCetak.Size = new System.Drawing.Size(122, 37);
+            this.btnCetak.TabIndex = 20;
+            this.btnCetak.Text = "Cetak";
+            this.btnCetak.TextOffset = new System.Drawing.Point(0, 2);
+            this.btnCetak.Click += new System.EventHandler(this.btnCetak_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Animated = true;
+            this.btnUpdate.BorderRadius = 6;
+            this.btnUpdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnUpdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnUpdate.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnUpdate.FillColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnUpdate.FillColor2 = System.Drawing.Color.Green;
+            this.btnUpdate.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.ForeColor = System.Drawing.Color.White;
+            this.btnUpdate.Location = new System.Drawing.Point(735, 465);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(136, 37);
+            this.btnUpdate.TabIndex = 19;
+            this.btnUpdate.Text = "Update Data";
+            this.btnUpdate.TextOffset = new System.Drawing.Point(0, 2);
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Animated = true;
+            this.btnDelete.BorderRadius = 6;
+            this.btnDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDelete.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDelete.FillColor = System.Drawing.Color.Brown;
+            this.btnDelete.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnDelete.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.Location = new System.Drawing.Point(933, 465);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(142, 37);
+            this.btnDelete.TabIndex = 18;
+            this.btnDelete.Text = "Delete Data";
+            this.btnDelete.TextOffset = new System.Drawing.Point(0, 2);
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnRefresh
             // 
@@ -281,19 +358,41 @@
             // guna2Panel2
             // 
             this.guna2Panel2.BackColor = System.Drawing.Color.White;
-            this.guna2Panel2.Controls.Add(this.labelNamaMhs);
             this.guna2Panel2.Controls.Add(this.imageProfil);
+            this.guna2Panel2.Controls.Add(this.labelNamaMhs);
             this.guna2Panel2.Controls.Add(this.label2);
             this.guna2Panel2.Location = new System.Drawing.Point(735, 18);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(340, 441);
             this.guna2Panel2.TabIndex = 10;
             // 
+            // imageProfil
+            // 
+            this.imageProfil.BackColor = System.Drawing.Color.Transparent;
+            this.imageProfil.Image = global::manajemenDataMahasiswa.Properties.Resources.student;
+            this.imageProfil.ImageRotate = 0F;
+            this.imageProfil.Location = new System.Drawing.Point(108, 47);
+            this.imageProfil.Name = "imageProfil";
+            this.imageProfil.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.imageProfil.Size = new System.Drawing.Size(133, 122);
+            this.imageProfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imageProfil.TabIndex = 7;
+            this.imageProfil.TabStop = false;
+            this.imageProfil.UseTransparentBackground = true;
+            // 
             // labelNamaMhs
             // 
+            this.labelNamaMhs.Controls.Add(this.cmbStatus);
+            this.labelNamaMhs.Controls.Add(this.label7);
+            this.labelNamaMhs.Controls.Add(this.label5);
+            this.labelNamaMhs.Controls.Add(this.txtAngkatan);
+            this.labelNamaMhs.Controls.Add(this.txtFakultas);
+            this.labelNamaMhs.Controls.Add(this.txtJurusan);
+            this.labelNamaMhs.Controls.Add(this.txtNama);
+            this.labelNamaMhs.Controls.Add(this.label3);
+            this.labelNamaMhs.Controls.Add(this.txtNim);
             this.labelNamaMhs.Controls.Add(this.labelStatus);
             this.labelNamaMhs.Controls.Add(this.labelJurusan);
-            this.labelNamaMhs.Controls.Add(this.labelIPK);
             this.labelNamaMhs.Controls.Add(this.labelNim);
             this.labelNamaMhs.Font = new System.Drawing.Font("Poppins SemiBold", 11F);
             this.labelNamaMhs.ForeColor = System.Drawing.Color.DimGray;
@@ -301,13 +400,152 @@
             this.labelNamaMhs.Name = "labelNamaMhs";
             this.labelNamaMhs.Size = new System.Drawing.Size(340, 266);
             this.labelNamaMhs.TabIndex = 6;
-            this.labelNamaMhs.Text = "Nama Mahasiswa";
+            this.labelNamaMhs.Text = "Biodata Mahasiswa";
             this.labelNamaMhs.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // cmbStatus
+            // 
+            this.cmbStatus.Font = new System.Drawing.Font("Poppins", 8F);
+            this.cmbStatus.FormattingEnabled = true;
+            this.cmbStatus.Items.AddRange(new object[] {
+            "aktif",
+            "tidak_aktif"});
+            this.cmbStatus.Location = new System.Drawing.Point(125, 224);
+            this.cmbStatus.Name = "cmbStatus";
+            this.cmbStatus.Size = new System.Drawing.Size(212, 31);
+            this.cmbStatus.TabIndex = 18;
+            // 
+            // label7
+            // 
+            this.label7.Font = new System.Drawing.Font("Poppins SemiBold", 10F);
+            this.label7.Location = new System.Drawing.Point(3, 191);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(116, 26);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Angkatan :";
+            // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("Poppins SemiBold", 10F);
+            this.label5.Location = new System.Drawing.Point(3, 157);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(107, 26);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Fakultas  :";
+            // 
+            // txtAngkatan
+            // 
+            this.txtAngkatan.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtAngkatan.DefaultText = "";
+            this.txtAngkatan.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtAngkatan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtAngkatan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtAngkatan.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtAngkatan.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtAngkatan.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAngkatan.ForeColor = System.Drawing.Color.Black;
+            this.txtAngkatan.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtAngkatan.Location = new System.Drawing.Point(125, 192);
+            this.txtAngkatan.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtAngkatan.Name = "txtAngkatan";
+            this.txtAngkatan.PlaceholderText = "";
+            this.txtAngkatan.SelectedText = "";
+            this.txtAngkatan.Size = new System.Drawing.Size(215, 24);
+            this.txtAngkatan.TabIndex = 9;
+            // 
+            // txtFakultas
+            // 
+            this.txtFakultas.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtFakultas.DefaultText = "";
+            this.txtFakultas.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtFakultas.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtFakultas.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtFakultas.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtFakultas.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtFakultas.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFakultas.ForeColor = System.Drawing.Color.Black;
+            this.txtFakultas.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtFakultas.Location = new System.Drawing.Point(125, 157);
+            this.txtFakultas.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtFakultas.Name = "txtFakultas";
+            this.txtFakultas.PlaceholderText = "";
+            this.txtFakultas.SelectedText = "";
+            this.txtFakultas.Size = new System.Drawing.Size(212, 25);
+            this.txtFakultas.TabIndex = 8;
+            // 
+            // txtJurusan
+            // 
+            this.txtJurusan.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtJurusan.DefaultText = "";
+            this.txtJurusan.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtJurusan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtJurusan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtJurusan.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtJurusan.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtJurusan.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtJurusan.ForeColor = System.Drawing.Color.Black;
+            this.txtJurusan.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtJurusan.Location = new System.Drawing.Point(125, 123);
+            this.txtJurusan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtJurusan.Name = "txtJurusan";
+            this.txtJurusan.PlaceholderText = "";
+            this.txtJurusan.SelectedText = "";
+            this.txtJurusan.Size = new System.Drawing.Size(212, 26);
+            this.txtJurusan.TabIndex = 7;
+            // 
+            // txtNama
+            // 
+            this.txtNama.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtNama.DefaultText = "";
+            this.txtNama.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtNama.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtNama.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtNama.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtNama.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtNama.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtNama.ForeColor = System.Drawing.Color.Black;
+            this.txtNama.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtNama.Location = new System.Drawing.Point(125, 89);
+            this.txtNama.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtNama.Name = "txtNama";
+            this.txtNama.PlaceholderText = "";
+            this.txtNama.SelectedText = "";
+            this.txtNama.Size = new System.Drawing.Size(212, 26);
+            this.txtNama.TabIndex = 6;
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Poppins SemiBold", 10F);
+            this.label3.Location = new System.Drawing.Point(3, 55);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(107, 26);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Nim : ";
+            // 
+            // txtNim
+            // 
+            this.txtNim.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtNim.DefaultText = "";
+            this.txtNim.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtNim.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtNim.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtNim.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtNim.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtNim.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtNim.ForeColor = System.Drawing.Color.Black;
+            this.txtNim.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtNim.Location = new System.Drawing.Point(125, 55);
+            this.txtNim.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtNim.Name = "txtNim";
+            this.txtNim.PlaceholderText = "";
+            this.txtNim.SelectedText = "";
+            this.txtNim.Size = new System.Drawing.Size(212, 26);
+            this.txtNim.TabIndex = 4;
             // 
             // labelStatus
             // 
-            this.labelStatus.AutoSize = true;
-            this.labelStatus.Location = new System.Drawing.Point(3, 108);
+            this.labelStatus.Font = new System.Drawing.Font("Poppins SemiBold", 10F);
+            this.labelStatus.Location = new System.Drawing.Point(4, 225);
             this.labelStatus.Name = "labelStatus";
             this.labelStatus.Size = new System.Drawing.Size(87, 34);
             this.labelStatus.TabIndex = 3;
@@ -315,45 +553,21 @@
             // 
             // labelJurusan
             // 
-            this.labelJurusan.AutoSize = true;
-            this.labelJurusan.Location = new System.Drawing.Point(3, 74);
+            this.labelJurusan.Font = new System.Drawing.Font("Poppins SemiBold", 10F);
+            this.labelJurusan.Location = new System.Drawing.Point(4, 123);
             this.labelJurusan.Name = "labelJurusan";
-            this.labelJurusan.Size = new System.Drawing.Size(106, 34);
+            this.labelJurusan.Size = new System.Drawing.Size(105, 26);
             this.labelJurusan.TabIndex = 2;
             this.labelJurusan.Text = "Jurusan :";
             // 
-            // labelIPK
-            // 
-            this.labelIPK.AutoSize = true;
-            this.labelIPK.Location = new System.Drawing.Point(3, 142);
-            this.labelIPK.Name = "labelIPK";
-            this.labelIPK.Size = new System.Drawing.Size(149, 34);
-            this.labelIPK.TabIndex = 1;
-            this.labelIPK.Text = "IPK (saat ini) :";
-            // 
             // labelNim
             // 
-            this.labelNim.AutoSize = true;
-            this.labelNim.Location = new System.Drawing.Point(3, 40);
+            this.labelNim.Font = new System.Drawing.Font("Poppins SemiBold", 10F);
+            this.labelNim.Location = new System.Drawing.Point(4, 89);
             this.labelNim.Name = "labelNim";
-            this.labelNim.Size = new System.Drawing.Size(69, 34);
+            this.labelNim.Size = new System.Drawing.Size(106, 26);
             this.labelNim.TabIndex = 0;
-            this.labelNim.Text = "Nim : ";
-            // 
-            // imageProfil
-            // 
-            this.imageProfil.BackColor = System.Drawing.Color.Transparent;
-            this.imageProfil.FillColor = System.Drawing.Color.Transparent;
-            this.imageProfil.Image = global::manajemenDataMahasiswa.Properties.Resources.student;
-            this.imageProfil.ImageRotate = 0F;
-            this.imageProfil.Location = new System.Drawing.Point(9, 47);
-            this.imageProfil.Name = "imageProfil";
-            this.imageProfil.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.imageProfil.Size = new System.Drawing.Size(328, 109);
-            this.imageProfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.imageProfil.TabIndex = 4;
-            this.imageProfil.TabStop = false;
-            this.imageProfil.UseTransparentBackground = true;
+            this.labelNim.Text = "Nama :";
             // 
             // label2
             // 
@@ -458,9 +672,8 @@
             this.guna2Panel1.PerformLayout();
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
-            this.labelNamaMhs.ResumeLayout(false);
-            this.labelNamaMhs.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageProfil)).EndInit();
+            this.labelNamaMhs.ResumeLayout(false);
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel3.PerformLayout();
             this.guna2Panel5.ResumeLayout(false);
@@ -492,11 +705,22 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
         private System.Windows.Forms.Label lblJmlhNonaktif;
         private System.Windows.Forms.Label label6;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox imageProfil;
         private Guna.UI2.WinForms.Guna2GroupBox labelNamaMhs;
         private System.Windows.Forms.Label labelStatus;
         private System.Windows.Forms.Label labelJurusan;
-        private System.Windows.Forms.Label labelIPK;
         private System.Windows.Forms.Label labelNim;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox imageProfil;
+        private Guna.UI2.WinForms.Guna2TextBox txtNim;
+        private System.Windows.Forms.Label label3;
+        private Guna.UI2.WinForms.Guna2TextBox txtAngkatan;
+        private Guna.UI2.WinForms.Guna2TextBox txtFakultas;
+        private Guna.UI2.WinForms.Guna2TextBox txtJurusan;
+        private Guna.UI2.WinForms.Guna2TextBox txtNama;
+        private System.Windows.Forms.ComboBox cmbStatus;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label5;
+        private Guna.UI2.WinForms.Guna2GradientButton btnUpdate;
+        private Guna.UI2.WinForms.Guna2GradientButton btnDelete;
+        private Guna.UI2.WinForms.Guna2GradientButton btnCetak;
     }
 }
