@@ -642,11 +642,12 @@
             // imageProfil
             // 
             this.imageProfil.BackColor = System.Drawing.Color.Transparent;
+            this.imageProfil.BorderRadius = 10;
             this.imageProfil.Image = global::manajemenDataMahasiswa.Properties.Resources.student;
             this.imageProfil.ImageRotate = 0F;
-            this.imageProfil.Location = new System.Drawing.Point(46, 54);
+            this.imageProfil.Location = new System.Drawing.Point(100, 47);
             this.imageProfil.Name = "imageProfil";
-            this.imageProfil.Size = new System.Drawing.Size(248, 115);
+            this.imageProfil.Size = new System.Drawing.Size(136, 122);
             this.imageProfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.imageProfil.TabIndex = 7;
             this.imageProfil.TabStop = false;

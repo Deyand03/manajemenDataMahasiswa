@@ -14,6 +14,7 @@ namespace manajemenDataMahasiswa
 {
     public partial class ucDashboard : UserControl
     {
+        private string nimLama;
         int selectedId = -1;
 
         int pageSize = 12;
@@ -239,6 +240,7 @@ namespace manajemenDataMahasiswa
                 {
                     imageProfil.Image = Properties.Resources.student;
                 }
+                nimLama = txtNim.Text;
             }
         }
         private void LoadImageToPictureBox(PictureBox pb, string imagePath)
@@ -300,19 +302,12 @@ namespace manajemenDataMahasiswa
                             File.Delete(pathPict);
                         }
                     }
-                    string queryUpdate = "UPDATE mahasiswa SET foto_profil = NULL WHERE user_id = @user_id";
-                    using (MySqlCommand cmdUpdate = new MySqlCommand(queryUpdate, conn))
-                    {
-                        cmdUpdate.Parameters.AddWithValue("@user_id", selectedId);
-                        cmdUpdate.ExecuteNonQuery();
-                        imageProfil.Image = Properties.Resources.student;
-                    }
-
                     string queryMhs = "DELETE FROM mahasiswa WHERE user_id = @user_id";
                     using (MySqlCommand cmdDeleteMhs = new MySqlCommand(queryMhs, conn))
                     {
                         cmdDeleteMhs.Parameters.AddWithValue("@user_id", selectedId);
                         cmdDeleteMhs.ExecuteNonQuery();
+                        imageProfil.Image = Properties.Resources.student;
                     }
                     string queryUsers = "DELETE FROM users WHERE id = @id";
                     using (MySqlCommand cmdDeleteUsers = new MySqlCommand(queryUsers, conn))
@@ -320,6 +315,8 @@ namespace manajemenDataMahasiswa
                         cmdDeleteUsers.Parameters.AddWithValue("@id", selectedId);
                         cmdDeleteUsers.ExecuteNonQuery();
                     }
+                    ClearForm();
+                    LoadData();
                 }
                 catch (Exception ex)
                 {
@@ -332,30 +329,93 @@ namespace manajemenDataMahasiswa
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             if (selectedId == -1) return;
-            using (MySqlConnection conn = new MySqlConnection(DBConfig.ConnStr))
+
+            string nimBaru = txtNim.Text.Trim();
+            if(nimLama == nimBaru)
             {
-                try
+                using (MySqlConnection conn = new MySqlConnection(DBConfig.ConnStr))
+                {
+                    try
+                    {
+                        conn.Open();
+                        string query = "UPDATE mahasiswa SET nim=@nim, nama=@nama, jurusan=@jurusan, fakultas=@fakultas, angkatan=@angkatan, status=@status WHERE user_id=@user_id";
+                        MySqlCommand cmd = new MySqlCommand(query, conn);
+                        cmd.Parameters.AddWithValue("@nama", txtNama.Text);
+                        cmd.Parameters.AddWithValue("@nim", txtNim.Text);
+                        cmd.Parameters.AddWithValue("@jurusan", txtJurusan.Text);
+                        cmd.Parameters.AddWithValue("@fakultas", txtFakultas.Text);
+                        cmd.Parameters.AddWithValue("@angkatan", txtAngkatan.Text);
+                        cmd.Parameters.AddWithValue("@status", cmbStatus.Text);
+                        cmd.Parameters.AddWithValue("@user_id", selectedId);
+
+                        cmd.ExecuteNonQuery();
+                        LoadData();
+                        MessageBox.Show("Data Berhasil Diupdate");
+                        return;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("ERROR COGG " + ex.Message);
+                    }
+                }
+            }
+            string namaFileFotoLama = null;
+            string namaFileFotoBaru = null;
+
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(DBConfig.ConnStr))
                 {
                     conn.Open();
-                    string query = "UPDATE mahasiswa SET nim=@nim, nama=@nama, jurusan=@jurusan, fakultas=@fakultas, angkatan=@angkatan, status=@status WHERE user_id=@user_id";
-                    MySqlCommand cmd = new MySqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@nama", txtNama.Text);
-                    cmd.Parameters.AddWithValue("@nim", txtNim.Text);
-                    cmd.Parameters.AddWithValue("@jurusan", txtJurusan.Text);
-                    cmd.Parameters.AddWithValue("@fakultas", txtFakultas.Text);
-                    cmd.Parameters.AddWithValue("@angkatan", txtAngkatan.Text);
-                    cmd.Parameters.AddWithValue("@status", cmbStatus.Text);
-                    cmd.Parameters.AddWithValue("@user_id", selectedId);
 
-                    cmd.ExecuteNonQuery();
-                    LoadData();
-                    MessageBox.Show("Data Berhasil Diupdate");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("ERROR COGG " + ex.Message);
-                }
+                    string querySelect = "SELECT foto_profil FROM mahasiswa WHERE nim = @nimLama";
+                    using (MySqlCommand cmdSelect = new MySqlCommand(querySelect, conn))
+                    {
+                        cmdSelect.Parameters.AddWithValue("@nimLama", nimLama);
+                        object result = cmdSelect.ExecuteScalar();
+                        if (result != null && result != DBNull.Value)
+                        {
+                            namaFileFotoLama = result.ToString();
+                        }
+                    }
 
+                    if (!string.IsNullOrEmpty(namaFileFotoLama))
+                    {
+                        string ekstensi = Path.GetExtension(namaFileFotoLama);
+                        namaFileFotoBaru = nimBaru + ekstensi;
+
+                        string folderFoto = Path.Combine(Application.StartupPath, "foto_mahasiswa");
+                        string pathLama = Path.Combine(folderFoto, namaFileFotoLama);
+                        string pathBaru = Path.Combine(folderFoto, namaFileFotoBaru);
+
+                        if (File.Exists(pathLama))
+                        {
+                            File.Move(pathLama, pathBaru); 
+                        }
+                    }
+
+                    string queryUpdate = "UPDATE mahasiswa SET nim = @nimBaru, nama = @nama, jurusan = @jurusan, fakultas=@fakultas, foto_profil = @fotoBaru, status = @status WHERE nim = @nimLama";
+                    using (MySqlCommand cmdUpdate = new MySqlCommand(queryUpdate, conn))
+                    {
+                        cmdUpdate.Parameters.AddWithValue("@nimBaru", nimBaru);
+                        cmdUpdate.Parameters.AddWithValue("@nama", txtNama.Text);
+                        cmdUpdate.Parameters.AddWithValue("@jurusan", txtJurusan.Text);
+                        cmdUpdate.Parameters.AddWithValue("@fakultas", txtFakultas.Text);
+                        cmdUpdate.Parameters.AddWithValue("@fotoBaru", (object)namaFileFotoBaru ?? DBNull.Value);
+                        cmdUpdate.Parameters.AddWithValue("@nimLama", nimLama);
+                        cmdUpdate.Parameters.AddWithValue("@status", cmbStatus.Text);
+
+                        cmdUpdate.ExecuteNonQuery();
+                        MessageBox.Show("Data berhasil diupdate!");
+                        string load = Path.Combine(Application.StartupPath, "foto_mahasiswa", namaFileFotoBaru);
+                        LoadImageToPictureBox(imageProfil, load);
+                        LoadData(); 
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gagal mengupdate data: " + ex.Message);
             }
         }
         private void ClearForm()
@@ -366,6 +426,7 @@ namespace manajemenDataMahasiswa
             txtFakultas.Clear();
             txtAngkatan.Clear();
             cmbStatus.Text = "";
+            imageProfil.Image = Properties.Resources.student;
 
             selectedId = -1;
         }
