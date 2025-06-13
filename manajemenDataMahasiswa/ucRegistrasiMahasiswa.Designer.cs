@@ -41,14 +41,14 @@
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.btnClear = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2GroupBox3 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.btnAddPict = new Guna.UI2.WinForms.Guna2Button();
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
+            this.pictMhs = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2GroupBox1.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.guna2GroupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictMhs)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -243,7 +243,7 @@
             this.btnSave.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(107)))), ((int)(((byte)(208)))));
             this.btnSave.Font = new System.Drawing.Font("Poppins SemiBold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(841, 296);
+            this.btnSave.Location = new System.Drawing.Point(35, 582);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(245, 45);
             this.btnSave.TabIndex = 7;
@@ -290,7 +290,7 @@
             this.btnClear.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(77)))), ((int)(((byte)(121)))));
             this.btnClear.Font = new System.Drawing.Font("Poppins SemiBold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(841, 347);
+            this.btnClear.Location = new System.Drawing.Point(297, 582);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(245, 45);
             this.btnClear.TabIndex = 8;
@@ -298,29 +298,15 @@
             this.btnClear.TextOffset = new System.Drawing.Point(0, 3);
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // guna2CirclePictureBox1
-            // 
-            this.guna2CirclePictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CirclePictureBox1.Image = global::manajemenDataMahasiswa.Properties.Resources.student;
-            this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(36, 54);
-            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(198, 154);
-            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2CirclePictureBox1.TabIndex = 19;
-            this.guna2CirclePictureBox1.TabStop = false;
-            this.guna2CirclePictureBox1.UseTransparentBackground = true;
-            // 
             // guna2GroupBox3
             // 
+            this.guna2GroupBox3.Controls.Add(this.pictMhs);
             this.guna2GroupBox3.Controls.Add(this.btnAddPict);
-            this.guna2GroupBox3.Controls.Add(this.guna2CirclePictureBox1);
             this.guna2GroupBox3.Font = new System.Drawing.Font("Poppins Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.guna2GroupBox3.Location = new System.Drawing.Point(575, 293);
             this.guna2GroupBox3.Name = "guna2GroupBox3";
-            this.guna2GroupBox3.Size = new System.Drawing.Size(260, 273);
+            this.guna2GroupBox3.Size = new System.Drawing.Size(511, 273);
             this.guna2GroupBox3.TabIndex = 19;
             this.guna2GroupBox3.Text = "Foto";
             // 
@@ -335,12 +321,26 @@
             this.btnAddPict.FillColor = System.Drawing.Color.Teal;
             this.btnAddPict.Font = new System.Drawing.Font("Poppins SemiBold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddPict.ForeColor = System.Drawing.Color.White;
-            this.btnAddPict.Location = new System.Drawing.Point(36, 225);
+            this.btnAddPict.Location = new System.Drawing.Point(282, 66);
             this.btnAddPict.Name = "btnAddPict";
             this.btnAddPict.Size = new System.Drawing.Size(198, 35);
             this.btnAddPict.TabIndex = 20;
             this.btnAddPict.Text = "Add Pict...";
             this.btnAddPict.TextOffset = new System.Drawing.Point(0, 3);
+            this.btnAddPict.Click += new System.EventHandler(this.btnAddPict_Click);
+            // 
+            // pictMhs
+            // 
+            this.pictMhs.BackColor = System.Drawing.Color.Transparent;
+            this.pictMhs.Image = global::manajemenDataMahasiswa.Properties.Resources.student;
+            this.pictMhs.ImageRotate = 0F;
+            this.pictMhs.Location = new System.Drawing.Point(13, 54);
+            this.pictMhs.Name = "pictMhs";
+            this.pictMhs.Size = new System.Drawing.Size(251, 201);
+            this.pictMhs.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictMhs.TabIndex = 21;
+            this.pictMhs.TabStop = false;
+            this.pictMhs.UseTransparentBackground = true;
             // 
             // ucRegistrasiMahasiswa
             // 
@@ -357,8 +357,8 @@
             this.Size = new System.Drawing.Size(1101, 746);
             this.guna2GroupBox1.ResumeLayout(false);
             this.guna2GroupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             this.guna2GroupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictMhs)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -378,9 +378,9 @@
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox2;
         private Guna.UI2.WinForms.Guna2Button btnClear;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox3;
         private Guna.UI2.WinForms.Guna2Button btnAddPict;
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
+        private Guna.UI2.WinForms.Guna2PictureBox pictMhs;
     }
 }

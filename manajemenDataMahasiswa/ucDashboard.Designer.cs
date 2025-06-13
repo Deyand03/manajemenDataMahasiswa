@@ -42,6 +42,12 @@
             this.cmbFilterBy = new System.Windows.Forms.ComboBox();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.labelNamaMhs = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.labelStatus = new System.Windows.Forms.Label();
+            this.labelJurusan = new System.Windows.Forms.Label();
+            this.labelIPK = new System.Windows.Forms.Label();
+            this.labelNim = new System.Windows.Forms.Label();
+            this.imageProfil = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.lblJmlhAktif = new System.Windows.Forms.Label();
@@ -49,20 +55,14 @@
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.lblJmlhNonaktif = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.imageProfil = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.labelNamaMhs = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.labelNim = new System.Windows.Forms.Label();
-            this.labelIPK = new System.Windows.Forms.Label();
-            this.labelJurusan = new System.Windows.Forms.Label();
-            this.labelStatus = new System.Windows.Forms.Label();
             this.guna2Panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMhs)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
+            this.labelNamaMhs.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imageProfil)).BeginInit();
             this.guna2Panel3.SuspendLayout();
             this.guna2Panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imageProfil)).BeginInit();
-            this.labelNamaMhs.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Panel4
@@ -289,6 +289,72 @@
             this.guna2Panel2.Size = new System.Drawing.Size(340, 441);
             this.guna2Panel2.TabIndex = 10;
             // 
+            // labelNamaMhs
+            // 
+            this.labelNamaMhs.Controls.Add(this.labelStatus);
+            this.labelNamaMhs.Controls.Add(this.labelJurusan);
+            this.labelNamaMhs.Controls.Add(this.labelIPK);
+            this.labelNamaMhs.Controls.Add(this.labelNim);
+            this.labelNamaMhs.Font = new System.Drawing.Font("Poppins SemiBold", 11F);
+            this.labelNamaMhs.ForeColor = System.Drawing.Color.DimGray;
+            this.labelNamaMhs.Location = new System.Drawing.Point(0, 175);
+            this.labelNamaMhs.Name = "labelNamaMhs";
+            this.labelNamaMhs.Size = new System.Drawing.Size(340, 266);
+            this.labelNamaMhs.TabIndex = 6;
+            this.labelNamaMhs.Text = "Nama Mahasiswa";
+            this.labelNamaMhs.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // labelStatus
+            // 
+            this.labelStatus.AutoSize = true;
+            this.labelStatus.Location = new System.Drawing.Point(3, 108);
+            this.labelStatus.Name = "labelStatus";
+            this.labelStatus.Size = new System.Drawing.Size(87, 34);
+            this.labelStatus.TabIndex = 3;
+            this.labelStatus.Text = "Status :";
+            // 
+            // labelJurusan
+            // 
+            this.labelJurusan.AutoSize = true;
+            this.labelJurusan.Location = new System.Drawing.Point(3, 74);
+            this.labelJurusan.Name = "labelJurusan";
+            this.labelJurusan.Size = new System.Drawing.Size(106, 34);
+            this.labelJurusan.TabIndex = 2;
+            this.labelJurusan.Text = "Jurusan :";
+            // 
+            // labelIPK
+            // 
+            this.labelIPK.AutoSize = true;
+            this.labelIPK.Location = new System.Drawing.Point(3, 142);
+            this.labelIPK.Name = "labelIPK";
+            this.labelIPK.Size = new System.Drawing.Size(149, 34);
+            this.labelIPK.TabIndex = 1;
+            this.labelIPK.Text = "IPK (saat ini) :";
+            // 
+            // labelNim
+            // 
+            this.labelNim.AutoSize = true;
+            this.labelNim.Location = new System.Drawing.Point(3, 40);
+            this.labelNim.Name = "labelNim";
+            this.labelNim.Size = new System.Drawing.Size(69, 34);
+            this.labelNim.TabIndex = 0;
+            this.labelNim.Text = "Nim : ";
+            // 
+            // imageProfil
+            // 
+            this.imageProfil.BackColor = System.Drawing.Color.Transparent;
+            this.imageProfil.FillColor = System.Drawing.Color.Transparent;
+            this.imageProfil.Image = global::manajemenDataMahasiswa.Properties.Resources.student;
+            this.imageProfil.ImageRotate = 0F;
+            this.imageProfil.Location = new System.Drawing.Point(9, 47);
+            this.imageProfil.Name = "imageProfil";
+            this.imageProfil.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.imageProfil.Size = new System.Drawing.Size(328, 109);
+            this.imageProfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imageProfil.TabIndex = 4;
+            this.imageProfil.TabStop = false;
+            this.imageProfil.UseTransparentBackground = true;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -373,71 +439,6 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "Jumlah Mahasiswa Tidak Aktif";
             // 
-            // imageProfil
-            // 
-            this.imageProfil.BackColor = System.Drawing.Color.Transparent;
-            this.imageProfil.Image = global::manajemenDataMahasiswa.Properties.Resources.student;
-            this.imageProfil.ImageRotate = 0F;
-            this.imageProfil.Location = new System.Drawing.Point(111, 47);
-            this.imageProfil.Name = "imageProfil";
-            this.imageProfil.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.imageProfil.Size = new System.Drawing.Size(125, 109);
-            this.imageProfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.imageProfil.TabIndex = 4;
-            this.imageProfil.TabStop = false;
-            this.imageProfil.UseTransparentBackground = true;
-            // 
-            // labelNamaMhs
-            // 
-            this.labelNamaMhs.Controls.Add(this.labelStatus);
-            this.labelNamaMhs.Controls.Add(this.labelJurusan);
-            this.labelNamaMhs.Controls.Add(this.labelIPK);
-            this.labelNamaMhs.Controls.Add(this.labelNim);
-            this.labelNamaMhs.Font = new System.Drawing.Font("Poppins SemiBold", 11F);
-            this.labelNamaMhs.ForeColor = System.Drawing.Color.DimGray;
-            this.labelNamaMhs.Location = new System.Drawing.Point(0, 175);
-            this.labelNamaMhs.Name = "labelNamaMhs";
-            this.labelNamaMhs.Size = new System.Drawing.Size(340, 266);
-            this.labelNamaMhs.TabIndex = 6;
-            this.labelNamaMhs.Text = "Nama Mahasiswa";
-            this.labelNamaMhs.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // labelNim
-            // 
-            this.labelNim.AutoSize = true;
-            this.labelNim.Location = new System.Drawing.Point(3, 40);
-            this.labelNim.Name = "labelNim";
-            this.labelNim.Size = new System.Drawing.Size(69, 34);
-            this.labelNim.TabIndex = 0;
-            this.labelNim.Text = "Nim : ";
-            // 
-            // labelIPK
-            // 
-            this.labelIPK.AutoSize = true;
-            this.labelIPK.Location = new System.Drawing.Point(3, 142);
-            this.labelIPK.Name = "labelIPK";
-            this.labelIPK.Size = new System.Drawing.Size(149, 34);
-            this.labelIPK.TabIndex = 1;
-            this.labelIPK.Text = "IPK (saat ini) :";
-            // 
-            // labelJurusan
-            // 
-            this.labelJurusan.AutoSize = true;
-            this.labelJurusan.Location = new System.Drawing.Point(3, 74);
-            this.labelJurusan.Name = "labelJurusan";
-            this.labelJurusan.Size = new System.Drawing.Size(106, 34);
-            this.labelJurusan.TabIndex = 2;
-            this.labelJurusan.Text = "Jurusan :";
-            // 
-            // labelStatus
-            // 
-            this.labelStatus.AutoSize = true;
-            this.labelStatus.Location = new System.Drawing.Point(3, 108);
-            this.labelStatus.Name = "labelStatus";
-            this.labelStatus.Size = new System.Drawing.Size(87, 34);
-            this.labelStatus.TabIndex = 3;
-            this.labelStatus.Text = "Status :";
-            // 
             // ucDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -457,13 +458,13 @@
             this.guna2Panel1.PerformLayout();
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
+            this.labelNamaMhs.ResumeLayout(false);
+            this.labelNamaMhs.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imageProfil)).EndInit();
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel3.PerformLayout();
             this.guna2Panel5.ResumeLayout(false);
             this.guna2Panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imageProfil)).EndInit();
-            this.labelNamaMhs.ResumeLayout(false);
-            this.labelNamaMhs.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

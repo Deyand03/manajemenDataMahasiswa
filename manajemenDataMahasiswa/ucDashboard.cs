@@ -34,7 +34,6 @@ namespace manajemenDataMahasiswa
             currentPage = 1;
             isFiltered = false;
             TampilkanDataDefault();
-            TampilanStudentView();
         }
         private void btnRefresh_Click(object sender, EventArgs e)
         {
@@ -227,24 +226,21 @@ namespace manajemenDataMahasiswa
                 string nim = dgvMhs.Rows[e.RowIndex].Cells["nim"].Value?.ToString() ?? "";
                 string jurusan = dgvMhs.Rows[e.RowIndex].Cells["jurusan"].Value?.ToString() ?? "";
                 string status = dgvMhs.Rows[e.RowIndex].Cells["status"].Value?.ToString() ?? "";
+                string profilPict = dgvMhs.Rows[e.RowIndex].Cells["foto_profil"].Value?.ToString() ?? "";
+                string folderApp = Application.StartupPath;
+                string path = Path.Combine(folderApp, "foto_mahasiswa", profilPict);
+                if (!string.IsNullOrEmpty(profilPict) && File.Exists(path))
+                {
+                    imageProfil.Image = Image.FromFile(path);
+                }
+                else
+                {
+                    imageProfil.Image = Properties.Resources.student;
+                }
 
                 labelNim.Text = $"Nim : {nim}";
                 labelJurusan.Text = $"Jurusan : {jurusan}";
                 labelStatus.Text = $"Status : {status}";
-            }
-        }
-        private void TampilanStudentView()
-        {
-            string pictMhs = "student.png";
-            string folderApp = Application.StartupPath;
-            string path = Path.Combine(folderApp, "foto_profil", pictMhs);
-            if(!string.IsNullOrEmpty(pictMhs) && File.Exists(path))
-            {
-                imageProfil.Image = Image.FromFile(path);
-            }
-            else
-            {
-                imageProfil.Image = Properties.Resources.student;
             }
         }
     }
