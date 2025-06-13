@@ -45,7 +45,6 @@
             this.cmbFilterBy = new System.Windows.Forms.ComboBox();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.imageProfil = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.labelNamaMhs = new Guna.UI2.WinForms.Guna2GroupBox();
             this.cmbStatus = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -66,14 +65,15 @@
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.lblJmlhNonaktif = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.imageProfil = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMhs)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imageProfil)).BeginInit();
             this.labelNamaMhs.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             this.guna2Panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imageProfil)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Panel4
@@ -366,20 +366,6 @@
             this.guna2Panel2.Size = new System.Drawing.Size(340, 441);
             this.guna2Panel2.TabIndex = 10;
             // 
-            // imageProfil
-            // 
-            this.imageProfil.BackColor = System.Drawing.Color.Transparent;
-            this.imageProfil.Image = global::manajemenDataMahasiswa.Properties.Resources.student;
-            this.imageProfil.ImageRotate = 0F;
-            this.imageProfil.Location = new System.Drawing.Point(108, 47);
-            this.imageProfil.Name = "imageProfil";
-            this.imageProfil.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.imageProfil.Size = new System.Drawing.Size(133, 122);
-            this.imageProfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.imageProfil.TabIndex = 7;
-            this.imageProfil.TabStop = false;
-            this.imageProfil.UseTransparentBackground = true;
-            // 
             // labelNamaMhs
             // 
             this.labelNamaMhs.Controls.Add(this.cmbStatus);
@@ -653,6 +639,19 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "Jumlah Mahasiswa Tidak Aktif";
             // 
+            // imageProfil
+            // 
+            this.imageProfil.BackColor = System.Drawing.Color.Transparent;
+            this.imageProfil.Image = global::manajemenDataMahasiswa.Properties.Resources.student;
+            this.imageProfil.ImageRotate = 0F;
+            this.imageProfil.Location = new System.Drawing.Point(46, 54);
+            this.imageProfil.Name = "imageProfil";
+            this.imageProfil.Size = new System.Drawing.Size(248, 115);
+            this.imageProfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imageProfil.TabIndex = 7;
+            this.imageProfil.TabStop = false;
+            this.imageProfil.UseTransparentBackground = true;
+            // 
             // ucDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -672,12 +671,12 @@
             this.guna2Panel1.PerformLayout();
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imageProfil)).EndInit();
             this.labelNamaMhs.ResumeLayout(false);
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel3.PerformLayout();
             this.guna2Panel5.ResumeLayout(false);
             this.guna2Panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imageProfil)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -709,7 +708,6 @@
         private System.Windows.Forms.Label labelStatus;
         private System.Windows.Forms.Label labelJurusan;
         private System.Windows.Forms.Label labelNim;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox imageProfil;
         private Guna.UI2.WinForms.Guna2TextBox txtNim;
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2TextBox txtAngkatan;
@@ -722,5 +720,6 @@
         private Guna.UI2.WinForms.Guna2GradientButton btnUpdate;
         private Guna.UI2.WinForms.Guna2GradientButton btnDelete;
         private Guna.UI2.WinForms.Guna2GradientButton btnCetak;
+        private Guna.UI2.WinForms.Guna2PictureBox imageProfil;
     }
 }

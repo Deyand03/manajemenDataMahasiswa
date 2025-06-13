@@ -31,7 +31,6 @@ namespace manajemenDataMahasiswa
         private void LoadData()
         {
             TampilkanJumlahMahasiswa();
-            currentPage = 1;
             isFiltered = false;
             TampilkanDataDefault();
         }
