@@ -32,11 +32,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             this.btnLogin = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.btnShowHide = new Guna.UI2.WinForms.Guna2Button();
             this.txtPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtEmail = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.btnClose = new Guna.UI2.WinForms.Guna2CircleButton();
             label1 = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -44,27 +45,27 @@
             // 
             // label1
             // 
-            label1.AutoSize = true;
             label1.BackColor = System.Drawing.Color.Transparent;
-            label1.Font = new System.Drawing.Font("Poppins", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label1.ForeColor = System.Drawing.Color.Black;
-            label1.Location = new System.Drawing.Point(30, 144);
+            label1.Font = new System.Drawing.Font("Poppins", 20F, System.Drawing.FontStyle.Bold);
+            label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(127)))), ((int)(((byte)(228)))));
+            label1.Location = new System.Drawing.Point(43, 145);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(394, 82);
+            label1.Size = new System.Drawing.Size(369, 82);
             label1.TabIndex = 6;
-            label1.Text = "Welcome Back";
+            label1.Text = "Welcome Back!";
             // 
             // btnLogin
             // 
             this.btnLogin.Animated = true;
+            this.btnLogin.BackColor = System.Drawing.Color.Transparent;
             this.btnLogin.BorderRadius = 8;
             this.btnLogin.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnLogin.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnLogin.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnLogin.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnLogin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnLogin.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(30)))), ((int)(((byte)(85)))));
-            this.btnLogin.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(77)))), ((int)(((byte)(121)))));
+            this.btnLogin.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(107)))), ((int)(((byte)(208)))));
+            this.btnLogin.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(127)))), ((int)(((byte)(228)))));
             this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnLogin.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnLogin.IndicateFocus = true;
@@ -77,7 +78,8 @@
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.Controls.Add(this.btnClose);
+            this.guna2Panel1.Controls.Add(this.guna2Panel2);
+            this.guna2Panel1.Controls.Add(this.guna2Button1);
             this.guna2Panel1.Controls.Add(this.btnShowHide);
             this.guna2Panel1.Controls.Add(this.btnLogin);
             this.guna2Panel1.Controls.Add(label1);
@@ -89,10 +91,42 @@
             this.guna2Panel1.Size = new System.Drawing.Size(459, 632);
             this.guna2Panel1.TabIndex = 9;
             // 
+            // guna2Panel2
+            // 
+            this.guna2Panel2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.guna2Panel2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(127)))), ((int)(((byte)(228)))));
+            this.guna2Panel2.ForeColor = System.Drawing.Color.Transparent;
+            this.guna2Panel2.Location = new System.Drawing.Point(57, 203);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.Size = new System.Drawing.Size(158, 10);
+            this.guna2Panel2.TabIndex = 8;
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.Animated = true;
+            this.guna2Button1.AutoRoundedCorners = true;
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.Font = new System.Drawing.Font("Poppins Medium", 10.8F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.Image = global::manajemenDataMahasiswa.Properties.Resources.power;
+            this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button1.ImageSize = new System.Drawing.Size(25, 25);
+            this.guna2Button1.Location = new System.Drawing.Point(349, 12);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(98, 45);
+            this.guna2Button1.TabIndex = 7;
+            this.guna2Button1.Text = "Exit";
+            this.guna2Button1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button1.TextOffset = new System.Drawing.Point(0, 2);
+            this.guna2Button1.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // btnShowHide
             // 
             this.btnShowHide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(29)))));
-            this.btnShowHide.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(30)))), ((int)(((byte)(85)))));
+            this.btnShowHide.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(107)))), ((int)(((byte)(208)))));
             this.btnShowHide.BorderRadius = 6;
             this.btnShowHide.BorderThickness = 2;
             this.btnShowHide.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -112,7 +146,7 @@
             // txtPassword
             // 
             this.txtPassword.Animated = true;
-            this.txtPassword.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(30)))), ((int)(((byte)(85)))));
+            this.txtPassword.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(107)))), ((int)(((byte)(208)))));
             this.txtPassword.BorderRadius = 6;
             this.txtPassword.BorderThickness = 2;
             this.txtPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -142,7 +176,7 @@
             // txtEmail
             // 
             this.txtEmail.Animated = true;
-            this.txtEmail.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(30)))), ((int)(((byte)(85)))));
+            this.txtEmail.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(107)))), ((int)(((byte)(208)))));
             this.txtEmail.BorderRadius = 6;
             this.txtEmail.BorderThickness = 2;
             this.txtEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -180,23 +214,6 @@
             this.guna2PictureBox1.TabStop = false;
             this.guna2PictureBox1.UseTransparentBackground = true;
             // 
-            // btnClose
-            // 
-            this.btnClose.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnClose.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnClose.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnClose.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnClose.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(30)))), ((int)(((byte)(85)))));
-            this.btnClose.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(376, 12);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btnClose.Size = new System.Drawing.Size(71, 67);
-            this.btnClose.TabIndex = 7;
-            this.btnClose.Text = "Off";
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -210,7 +227,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "::LOGIN::";
             this.guna2Panel1.ResumeLayout(false);
-            this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -223,6 +239,7 @@
         private Guna.UI2.WinForms.Guna2Button btnShowHide;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2CircleButton btnClose;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
     }
 }

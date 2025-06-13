@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="BCrypt.Net-Next, Version=4.0.3.0, Culture=neutral, PublicKeyToken=1e11be04b6288443, processorArchitecture=MSIL">
       <HintPath>..\packages\BCrypt.Net-Next.4.0.3\lib\net472\BCrypt.Net-Next.dll</HintPath>
@@ -108,6 +111,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource.resx</DependentUpon>
     </Compile>
+    <Compile Include="ThemeManager.cs" />
     <Compile Include="ucDashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -155,6 +159,7 @@
     <EmbeddedResource Include="ucRegistrasiMahasiswa.resx">
       <DependentUpon>ucRegistrasiMahasiswa.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="app.manifest" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -207,6 +212,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\student.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\power.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\power1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

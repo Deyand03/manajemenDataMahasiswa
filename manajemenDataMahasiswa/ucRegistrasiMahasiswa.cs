@@ -19,11 +19,6 @@ namespace manajemenDataMahasiswa
             InitializeComponent();
         }
 
-        private void txtNama_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
             using (MySqlConnection conn = new MySqlConnection(DBConfig.ConnStr))
@@ -80,6 +75,16 @@ namespace manajemenDataMahasiswa
             txtAngkatan.Clear();
             txtEmail.Clear();
             txtPassword.Clear();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            ClearForm();
+        }
+
+        private void guna2Separator1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

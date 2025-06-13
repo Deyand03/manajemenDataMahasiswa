@@ -80,14 +80,20 @@ namespace manajemenDataMahasiswa
                                 MySqlCommand cmdMhs = new MySqlCommand(queryMhs, conn);
                                 cmdMhs.Parameters.AddWithValue("@id", id);
                                 MySqlDataReader readerMhs = cmdMhs.ExecuteReader();
-                                readerMhs.Read();
-                                string nama = readerMhs.GetString("nama");
-                                string nim = readerMhs.GetString("nim");
+                                if(readerMhs.Read())
+                                {
+                                    string nama = readerMhs.GetString("nama");
+                                    string nim = readerMhs.GetString("nim");
 
-                                UserSession.StartSession(nama, email, null, nim);
-                                FormDashboardMahasiswa frmmhs = new FormDashboardMahasiswa();
-                                this.Hide();
-                                frmmhs.Show();
+                                    UserSession.StartSession(nama, email, null, nim);
+                                    FormDashboardMahasiswa frmmhs = new FormDashboardMahasiswa();
+                                    this.Hide();
+                                    frmmhs.Show();
+                                }
+                                else
+                                {
+                                    MessageBox.Show($"user_id: {id}, tidak ada");
+                                }
                             }
                             else if(userRole == "dosen")
                             {
@@ -95,14 +101,20 @@ namespace manajemenDataMahasiswa
                                 MySqlCommand cmdDos = new MySqlCommand(queryDos, conn);
                                 cmdDos.Parameters.AddWithValue("@id", id);
                                 MySqlDataReader readerDos = cmdDos.ExecuteReader();
-                                readerDos.Read();
-                                string nama = readerDos.GetString("nama");
-                                string nip = readerDos.GetString("nip");
+                                if (readerDos.Read())
+                                {
+                                    string nama = readerDos.GetString("nama");
+                                    string nip = readerDos.GetString("nip");
 
-                                UserSession.StartSession(nama, email, nip, null);
-                                FormDashboardAdmin frmadmin = new FormDashboardAdmin();
-                                this.Hide();
-                                frmadmin.Show();
+                                    UserSession.StartSession(nama, email, nip, null);
+                                    FormDashboardAdmin frmadmin = new FormDashboardAdmin();
+                                    this.Hide();
+                                    frmadmin.Show();
+                                }
+                                else
+                                {
+                                    MessageBox.Show($"user_id: {id}, tidak ada");
+                                }
                             }
                         }
                         else
@@ -139,6 +151,11 @@ namespace manajemenDataMahasiswa
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

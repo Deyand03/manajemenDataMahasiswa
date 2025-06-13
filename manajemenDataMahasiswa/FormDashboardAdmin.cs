@@ -20,10 +20,6 @@ namespace manajemenDataMahasiswa
             LoadUserControl(new ucDashboard());
         }
 
-        private void FormDashboardAdmin_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void LoadUserControl(UserControl userControl)
         {
@@ -51,16 +47,6 @@ namespace manajemenDataMahasiswa
             btnDashboard.BackColor = Color.FromArgb(255, 245, 245);
         }
 
-        private void btnData_Click(object sender, EventArgs e)
-        {
-            LoadUserControl(new ucDataMahasiswa());
-            pnlNav.Height = btnData.Height;
-            pnlNav.Top = btnData.Top;
-            pnlNav.Left = btnData.Left;
-            btnData.BackColor = Color.FromArgb(255, 245, 245);
-            btnDashboard.BackColor = Color.FromArgb(0, 0, 0, 0);
-        }
-
         private void btnRegis_Click(object sender, EventArgs e)
         {
             LoadUserControl(new ucRegistrasiMahasiswa());
@@ -74,11 +60,6 @@ namespace manajemenDataMahasiswa
         private void btnDashboard_Leave(object sender, EventArgs e)
         {
             btnDashboard.BackColor = Color.FromArgb(0, 0, 0, 0);
-        }
-
-        private void btnData_Leave(object sender, EventArgs e)
-        {
-            btnData.BackColor = Color.FromArgb(0, 0, 0, 0);
         }
 
         private void btnRegis_Leave(object sender, EventArgs e)
@@ -96,5 +77,6 @@ namespace manajemenDataMahasiswa
             this.Close();
             frmLogin.Show();
         }
+
     }
 }
