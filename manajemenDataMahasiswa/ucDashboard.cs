@@ -73,5 +73,49 @@ namespace manajemenDataMahasiswa
                 labelJmlhMhs.Text = "N/A";
             }
         }
+
+        private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cariBtn_Click(object sender, EventArgs e)
+        {
+            TampilkanDataFiltered();
+        }
+
+        private void TampilkanDataFiltered()
+        {
+
+            string kolom = cmbFilterBy.SelectedItem?.ToString();
+            string keyword = txtCari.Text.Trim();
+
+            string kolomDB = "NIM";
+            if (kolom == "Nama") kolomDB = "nama";
+            else if (kolom == "Jurusan") kolomDB = "jurusan";
+            else if (kolom == "Fakultas") kolomDB = "fakultas";
+            else if (kolom == "Angkatan") kolomDB = "angkatan";
+            else if (kolom == "Status") kolomDB = "status";
+
+            string query = $"SELECT * FROM mahasiswa WHERE {kolomDB} LIKE @keyword ORDER BY user_id DESC";
+
+            using (MySqlConnection conn = new MySqlConnection(DBConfig.ConnStr))
+            using (MySqlCommand cmd = new MySqlCommand(query, conn))
+            {
+                cmd.Parameters.AddWithValue("@keyword", "%" + keyword + "%");
+
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+
+                da.Fill(dt);
+                dgvMhs.DataSource = dt;
+            }
+
+        }
+
+        private void cmbFilterBy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

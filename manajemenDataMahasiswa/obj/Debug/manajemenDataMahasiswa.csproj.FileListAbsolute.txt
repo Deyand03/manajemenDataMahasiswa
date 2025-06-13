@@ -24,3 +24,29 @@ C:\Users\Lenovo\source\repos\ManajemenDataMahasiswa\manajemenDataMahasiswa\obj\D
 C:\Users\Lenovo\source\repos\ManajemenDataMahasiswa\manajemenDataMahasiswa\obj\Debug\manajemenDataMahasiswa.exe
 C:\Users\Lenovo\source\repos\ManajemenDataMahasiswa\manajemenDataMahasiswa\obj\Debug\manajemenDataMahasiswa.pdb
 C:\Users\Lenovo\source\repos\ManajemenDataMahasiswa\manajemenDataMahasiswa\obj\Debug\manajemenDataMahasiswa.ucDashboard.resources
+D:\Visual Studio 22\project\manajamenDataMahasiswa\manajemenDataMahasiswa\bin\Debug\manajemenDataMahasiswa.exe.config
+D:\Visual Studio 22\project\manajamenDataMahasiswa\manajemenDataMahasiswa\bin\Debug\manajemenDataMahasiswa.exe
+D:\Visual Studio 22\project\manajamenDataMahasiswa\manajemenDataMahasiswa\bin\Debug\manajemenDataMahasiswa.pdb
+D:\Visual Studio 22\project\manajamenDataMahasiswa\manajemenDataMahasiswa\bin\Debug\BCrypt.Net-Next.dll
+D:\Visual Studio 22\project\manajamenDataMahasiswa\manajemenDataMahasiswa\bin\Debug\Guna.UI2.dll
+D:\Visual Studio 22\project\manajamenDataMahasiswa\manajemenDataMahasiswa\bin\Debug\MySql.Data.dll
+D:\Visual Studio 22\project\manajamenDataMahasiswa\manajemenDataMahasiswa\bin\Debug\System.Buffers.dll
+D:\Visual Studio 22\project\manajamenDataMahasiswa\manajemenDataMahasiswa\bin\Debug\System.Memory.dll
+D:\Visual Studio 22\project\manajamenDataMahasiswa\manajemenDataMahasiswa\bin\Debug\System.Numerics.Vectors.dll
+D:\Visual Studio 22\project\manajamenDataMahasiswa\manajemenDataMahasiswa\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Visual Studio 22\project\manajamenDataMahasiswa\manajemenDataMahasiswa\bin\Debug\BCrypt.Net-Next.xml
+D:\Visual Studio 22\project\manajamenDataMahasiswa\manajemenDataMahasiswa\bin\Debug\MySql.Data.xml
+D:\Visual Studio 22\project\manajamenDataMahasiswa\manajemenDataMahasiswa\bin\Debug\System.Buffers.xml
+D:\Visual Studio 22\project\manajamenDataMahasiswa\manajemenDataMahasiswa\bin\Debug\System.Memory.xml
+D:\Visual Studio 22\project\manajamenDataMahasiswa\manajemenDataMahasiswa\bin\Debug\System.Numerics.Vectors.xml
+D:\Visual Studio 22\project\manajamenDataMahasiswa\manajemenDataMahasiswa\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Visual Studio 22\project\manajamenDataMahasiswa\manajemenDataMahasiswa\obj\Debug\manajemenDataMahasiswa.csproj.AssemblyReference.cache
+D:\Visual Studio 22\project\manajamenDataMahasiswa\manajemenDataMahasiswa\obj\Debug\manajemenDataMahasiswa.FormDashboardAdmin.resources
+D:\Visual Studio 22\project\manajamenDataMahasiswa\manajemenDataMahasiswa\obj\Debug\manajemenDataMahasiswa.FormLogin.resources
+D:\Visual Studio 22\project\manajamenDataMahasiswa\manajemenDataMahasiswa\obj\Debug\manajemenDataMahasiswa.Properties.Resources.resources
+D:\Visual Studio 22\project\manajamenDataMahasiswa\manajemenDataMahasiswa\obj\Debug\manajemenDataMahasiswa.ucDashboard.resources
+D:\Visual Studio 22\project\manajamenDataMahasiswa\manajemenDataMahasiswa\obj\Debug\manajemenDataMahasiswa.csproj.GenerateResource.cache
+D:\Visual Studio 22\project\manajamenDataMahasiswa\manajemenDataMahasiswa\obj\Debug\manajemenDataMahasiswa.csproj.CoreCompileInputs.cache
+D:\Visual Studio 22\project\manajamenDataMahasiswa\manajemenDataMahasiswa\obj\Debug\manajeme.FF3EE513.Up2Date
+D:\Visual Studio 22\project\manajamenDataMahasiswa\manajemenDataMahasiswa\obj\Debug\manajemenDataMahasiswa.exe
+D:\Visual Studio 22\project\manajamenDataMahasiswa\manajemenDataMahasiswa\obj\Debug\manajemenDataMahasiswa.pdb
