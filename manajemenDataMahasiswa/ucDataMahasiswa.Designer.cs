@@ -35,14 +35,15 @@
             this.btnSearch = new Guna.UI2.WinForms.Guna2GradientButton();
             this.cmbFilterBy = new System.Windows.Forms.ComboBox();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.dgvMhs = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.guna2Panel2.SuspendLayout();
+            this.txtNilai = new System.Windows.Forms.TextBox();
+            this.dgvMatakuliah = new System.Windows.Forms.DataGridView();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMhs)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMatakuliah)).BeginInit();
             this.SuspendLayout();
             // 
             // btnRefresh
@@ -177,30 +178,12 @@
             this.txtSearch.TabIndex = 11;
             this.txtSearch.TextOffset = new System.Drawing.Point(10, 0);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(3, 8);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(185, 36);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Nilai Mahasiswa";
-            // 
-            // guna2Panel2
-            // 
-            this.guna2Panel2.BackColor = System.Drawing.Color.White;
-            this.guna2Panel2.Controls.Add(this.label2);
-            this.guna2Panel2.Location = new System.Drawing.Point(31, 350);
-            this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(1046, 252);
-            this.guna2Panel2.TabIndex = 10;
-            // 
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.guna2Panel1.Controls.Add(this.guna2Button1);
+            this.guna2Panel1.Controls.Add(this.dgvMatakuliah);
+            this.guna2Panel1.Controls.Add(this.txtNilai);
             this.guna2Panel1.Controls.Add(this.btnRefresh);
             this.guna2Panel1.Controls.Add(this.btnNext);
             this.guna2Panel1.Controls.Add(this.btnPrev);
@@ -208,7 +191,6 @@
             this.guna2Panel1.Controls.Add(this.btnSearch);
             this.guna2Panel1.Controls.Add(this.cmbFilterBy);
             this.guna2Panel1.Controls.Add(this.txtSearch);
-            this.guna2Panel1.Controls.Add(this.guna2Panel2);
             this.guna2Panel1.Controls.Add(this.dgvMhs);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 58);
@@ -238,6 +220,39 @@
             this.label1.TabIndex = 11;
             this.label1.Text = "Data Mahasiswa";
             // 
+            // txtNilai
+            // 
+            this.txtNilai.Font = new System.Drawing.Font("Poppins SemiBold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNilai.Location = new System.Drawing.Point(722, 350);
+            this.txtNilai.Name = "txtNilai";
+            this.txtNilai.Size = new System.Drawing.Size(200, 34);
+            this.txtNilai.TabIndex = 18;
+            // 
+            // dgvMatakuliah
+            // 
+            this.dgvMatakuliah.BackgroundColor = System.Drawing.Color.White;
+            this.dgvMatakuliah.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMatakuliah.Location = new System.Drawing.Point(31, 350);
+            this.dgvMatakuliah.Name = "dgvMatakuliah";
+            this.dgvMatakuliah.RowHeadersWidth = 51;
+            this.dgvMatakuliah.RowTemplate.Height = 24;
+            this.dgvMatakuliah.Size = new System.Drawing.Size(685, 301);
+            this.dgvMatakuliah.TabIndex = 19;
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.Location = new System.Drawing.Point(722, 401);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(200, 45);
+            this.guna2Button1.TabIndex = 20;
+            this.guna2Button1.Text = "guna2Button1";
+            // 
             // ucDataMahasiswa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -247,10 +262,10 @@
             this.Controls.Add(this.label1);
             this.Name = "ucDataMahasiswa";
             this.Size = new System.Drawing.Size(1101, 746);
-            this.guna2Panel2.ResumeLayout(false);
-            this.guna2Panel2.PerformLayout();
             this.guna2Panel1.ResumeLayout(false);
+            this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMhs)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMatakuliah)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -264,10 +279,11 @@
         private Guna.UI2.WinForms.Guna2GradientButton btnSearch;
         private System.Windows.Forms.ComboBox cmbFilterBy;
         private Guna.UI2.WinForms.Guna2TextBox txtSearch;
-        private System.Windows.Forms.Label label2;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private System.Windows.Forms.DataGridView dgvMhs;
         private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private System.Windows.Forms.DataGridView dgvMatakuliah;
+        private System.Windows.Forms.TextBox txtNilai;
     }
 }
