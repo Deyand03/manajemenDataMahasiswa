@@ -66,6 +66,7 @@
             this.lblJmlhNonaktif = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.imageProfil = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.guna2Panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMhs)).BeginInit();
             this.guna2Panel1.SuspendLayout();
@@ -653,11 +654,24 @@
             this.imageProfil.TabStop = false;
             this.imageProfil.UseTransparentBackground = true;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(876, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(225, 23);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "© 2025 Zenith. All Rights Reserved.";
+            // 
             // ucDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.guna2Panel5);
             this.Controls.Add(this.guna2Panel3);
             this.Controls.Add(this.guna2Panel4);
@@ -722,5 +736,6 @@
         private Guna.UI2.WinForms.Guna2GradientButton btnDelete;
         private Guna.UI2.WinForms.Guna2GradientButton btnCetak;
         private Guna.UI2.WinForms.Guna2PictureBox imageProfil;
+        private System.Windows.Forms.Label label8;
     }
 }

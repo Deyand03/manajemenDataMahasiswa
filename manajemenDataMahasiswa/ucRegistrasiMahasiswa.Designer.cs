@@ -42,9 +42,9 @@
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.btnClear = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GroupBox3 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.pictMhs = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnAddPict = new Guna.UI2.WinForms.Guna2Button();
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
-            this.pictMhs = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2GroupBox1.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
             this.guna2GroupBox3.SuspendLayout();
@@ -195,7 +195,7 @@
             this.txtEmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtEmail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtEmail.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.ForeColor = System.Drawing.Color.Black;
             this.txtEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtEmail.Location = new System.Drawing.Point(13, 57);
@@ -219,7 +219,7 @@
             this.txtPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPassword.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.ForeColor = System.Drawing.Color.Black;
             this.txtPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPassword.Location = new System.Drawing.Point(13, 122);
@@ -310,6 +310,19 @@
             this.guna2GroupBox3.TabIndex = 19;
             this.guna2GroupBox3.Text = "Foto";
             // 
+            // pictMhs
+            // 
+            this.pictMhs.BackColor = System.Drawing.Color.Transparent;
+            this.pictMhs.Image = global::manajemenDataMahasiswa.Properties.Resources.student;
+            this.pictMhs.ImageRotate = 0F;
+            this.pictMhs.Location = new System.Drawing.Point(13, 54);
+            this.pictMhs.Name = "pictMhs";
+            this.pictMhs.Size = new System.Drawing.Size(251, 201);
+            this.pictMhs.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictMhs.TabIndex = 21;
+            this.pictMhs.TabStop = false;
+            this.pictMhs.UseTransparentBackground = true;
+            // 
             // btnAddPict
             // 
             this.btnAddPict.Animated = true;
@@ -328,19 +341,6 @@
             this.btnAddPict.Text = "Add Pict...";
             this.btnAddPict.TextOffset = new System.Drawing.Point(0, 3);
             this.btnAddPict.Click += new System.EventHandler(this.btnAddPict_Click);
-            // 
-            // pictMhs
-            // 
-            this.pictMhs.BackColor = System.Drawing.Color.Transparent;
-            this.pictMhs.Image = global::manajemenDataMahasiswa.Properties.Resources.student;
-            this.pictMhs.ImageRotate = 0F;
-            this.pictMhs.Location = new System.Drawing.Point(13, 54);
-            this.pictMhs.Name = "pictMhs";
-            this.pictMhs.Size = new System.Drawing.Size(251, 201);
-            this.pictMhs.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictMhs.TabIndex = 21;
-            this.pictMhs.TabStop = false;
-            this.pictMhs.UseTransparentBackground = true;
             // 
             // ucRegistrasiMahasiswa
             // 

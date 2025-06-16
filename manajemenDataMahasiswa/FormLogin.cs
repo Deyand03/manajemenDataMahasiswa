@@ -124,7 +124,7 @@ namespace manajemenDataMahasiswa
                     }
                     else
                     {
-                        MessageBox.Show("Password salah!", "Login Gagal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Email Atau!", "Login Gagal", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 catch (Exception ex)
@@ -151,11 +151,6 @@ namespace manajemenDataMahasiswa
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
